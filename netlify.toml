@@ -1,0 +1,15 @@
+# netlify.toml
+
+# Configuration de build (normalement Netlify le détecte bien avec les settings UI, 
+# mais c'est bien de le spécifier ici aussi pour la postérité et si vous clonez ailleurs)
+[build]
+  command = "npm run build" 
+  publish = "dist"        
+
+# Règle de redirection pour les applications Single Page (SPA) comme React Router
+# Ceci assure que toutes les routes sont gérées par votre index.html, 
+# et que React Router prend le relais.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
